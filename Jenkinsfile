@@ -12,7 +12,7 @@ pipeline {
 
         stage('Deploying Resource') {
             steps {
-                container('azure') {
+                
                     pwsh ''' 
                             ############################### Powershell ###############################
                             
@@ -22,7 +22,7 @@ pipeline {
                             
                             az group create --location westus --resource-group MyResourceGroup
                 '''
-                }
+             
             }
         }
     }
