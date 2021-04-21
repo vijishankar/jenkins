@@ -16,13 +16,9 @@ pipeline {
                     pwsh ''' 
                             ############################### Powershell #############################
                             
-                            $passwd = ConvertTo-SecureString $env:AZURE_CLIENT_SECRET -AsPlainText -Force
-                            $pscredential = New-Object System.Management.Automation.PSCredential($env:AZURE_CLIENT_ID, $passwd)
-                            Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $env:AZURE_TENANT_ID | Out-null
-                            #Write-Output "Azure Subscription is "$Env:AZSUBSCRIPTION""
-                            Select-AzSubscription -Subscription "$Env:AZSUBSCRIPTION" | Set-AzContext | Out-null
                             
-                            az login --service-principal -u $Env:APP_URL -p $Env:AZURE_CLIENT_SECRET --tenant $Env:AZURE_TENANT_ID | Out-null
+                            
+                            az login --service-principal -u $APP_URL -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID | Out-null
                             
                             az group create --location westus --resource-group MyResourceGroup
                 '''
