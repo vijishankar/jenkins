@@ -13,15 +13,13 @@ pipeline {
         stage('Deploying Resource') {
             steps {
                 
-                    pwsh ''' 
-                            ############################### Powershell ###############################
-                            
+                   
                             
                             
                             az login --service-principal -u $APP_URL -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID | Out-null
                             
                             az group create --location westus --resource-group MyResourceGroup
-                '''
+              
              
             }
         }
