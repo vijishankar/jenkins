@@ -15,7 +15,7 @@ pipeline {
                        
                        
               
-                       load "${PATH}/resourcegroup.ps1"
+                        "${PATH}/resourcegroup.ps1"
                         
                  
                         }
