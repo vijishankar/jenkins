@@ -15,7 +15,7 @@ pipeline {
                        
                        
               
-                       sh "${PATH}/resourcegroup.ps1"
+                       
                         
                  
                         }
