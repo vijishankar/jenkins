@@ -14,7 +14,7 @@ pipeline {
             steps {
                 
                             
-                            az login --service-principal -u $Env:APP_URL -p $Env:AZURE_CLIENT_SECRET --tenant $Env:AZURE_TENANT_ID | Out-null
+                            az login --service-principal -u ${env.AZURE_CLIENT_ID} -p ${env.AZURE_CLIENT_SECRET} --tenant ${env.AZURE_TENANT_ID} | Out-null
                             
                             az group create --location westus --resource-group MyResourceGroup
               
