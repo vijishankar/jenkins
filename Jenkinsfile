@@ -13,10 +13,8 @@ pipeline {
         stage('Deploying Resource') {
             steps {
                 
-                   
                             
-                            
-                            az login --service-principal -u $APP_URL -p $AZURE_CLIENT_SECRET -tenant $AZURE_TENANT_ID | Out-null
+                            az login --service-principal -u $Env:APP_URL -p $Env:AZURE_CLIENT_SECRET --tenant $Env:AZURE_TENANT_ID | Out-null
                             
                             az group create --location westus --resource-group MyResourceGroup
               
