@@ -15,7 +15,7 @@ pipeline {
                        
                        
                         Write-Output ("============================ Creating Resource ============================================")
-                       ./PATH/resourcegroup
+                       load ${PATH}/resourcegroup
                         
                  
                         }
