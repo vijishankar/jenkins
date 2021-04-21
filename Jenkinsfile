@@ -30,9 +30,5 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            echo "\u001B[43;1m Total Build Duration is ${currentBuild.durationString.minus(' and counting')}\u001B[0m"
-        }
-    }
+    
 }
