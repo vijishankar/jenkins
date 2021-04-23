@@ -20,7 +20,11 @@ pipeline {
                        
                   
                         
-                      sh'az deployment group create --resource-group $RGNmae --template-file "${workspace}/Storage.json" --parameters "${workspace}/Storage.Parameters.json" '
+                      sh'az deployment group create 
+  --name $RGNmae 
+  --resource-group $RGNmae \
+  --template-file  "${workspace}/Storage.json"
+  --parameters  "${workspace}/Storage.Parameters.json"'
                        
          
                        
