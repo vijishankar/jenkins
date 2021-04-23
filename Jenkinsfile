@@ -1,10 +1,10 @@
 pipeline {
     agent any
-	 parameters {
+    parameters {
         
          string(name: 'RGName', defaultValue: '', description: 'Azure RG Name')
     }
-
+    
     environment {
        
        AZURE_SUBSCRIPTION_ID='4917809c-4753-4722-81bf-a1b4429fd9ca'
@@ -14,19 +14,21 @@ pipeline {
 
     stages {
         stage('Example') {
-			steps {
-				container('azure') {
-							pwsh ''' 
-								withCredentials([usernamePassword(credentialsId: 'myAzureCredential', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) 
-									{
-									sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
-										
-										sh'az deployment group create --resource-group $RGNmae --template-file "${workspace}/Storage.json"'
-									}
-							'''
-					}
-			  
-			} 
+            steps {
+                   withCredentials([usernamePassword(credentialsId: 'myAzureCredential', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+                            sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+                       
+                  
+                        
+                      sh'az deployment group create --resource-group $RGNmae --template-file "${workspace}/Storage.json"'
+                       
+         
+                       
+                    
+                       
+                       
+                        }
+            }
         }
     }
 }
