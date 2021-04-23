@@ -1,5 +1,9 @@
 pipeline {
     agent any
+	 parameters {
+        
+         string(name: 'RGName', defaultValue: '', description: 'Azure RG Name')
+    }
 
     environment {
        
@@ -17,7 +21,7 @@ pipeline {
 									{
 									sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
 										load "${workspace}/resourcegroup.ps1"
-										sh'az deployment group create --resource-group $RGNmae --template-file "${workspace}/resourcegroup.json"'
+										sh'az deployment group create --resource-group $RGNmae --template-file "${workspace}/Storage.json"'
 									}
 							'''
 					}
