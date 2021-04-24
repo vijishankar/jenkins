@@ -34,7 +34,7 @@ pipeline {
                   
                        println "${WORKSPACE}"
                        
-                       if ("${RG}" -eq 'Delete_CoreResources')
+                       if ("${RG}" -eq ('Delete_CoreResources'))
                        {
                            println "Delete_CoreResources"
                        }
