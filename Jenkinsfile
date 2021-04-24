@@ -8,7 +8,7 @@ pipeline {
         
          choice(name: 'RG', choices: ['CoreResources', 'IngressResources', 'TransactResources'], description: 'RG')
         booleanParam(name: 'Delete_CoreResources', defaultValue: 'false', description: '')
-        //booleanParam(name: 'Delete_IngressResources', defaultValue: 'false', description: '')
+        booleanParam(name: 'Delete_IngressResources', defaultValue: 'false', description: '')
         //booleanParam(name: 'Delete_TransactResources', defaultValue: 'false', description: '')
         //booleanParam(name: 'All', defaultValue: false, description: 'Deploy all resrouces')
         
@@ -42,6 +42,9 @@ pipeline {
                                //$value =  "${WORKSPACE} -core"
                                println  "hi"
                               //sh 'az group delete --name $WORKSPACE-$CORE --yes'
+                           }else if('Delete_IngressResources -eq $true')
+                           {
+                               println  "hello" 
                            }
                        }
                        
