@@ -42,7 +42,8 @@ pipeline {
                                //$value =  "${WORKSPACE} -core"
                                println  "hi"
                               //sh 'az group delete --name $WORKSPACE-$CORE --yes'
-                           }else if('Delete_IngressResources -eq $true')
+                           }
+                           if('Delete_IngressResources -eq $true')
                            {
                                println  "hello" 
                            }
