@@ -37,7 +37,7 @@ pipeline {
                       // println "${RG}"
                        
                        script{
-                           if($Env:Delete_CoreResources -eq ($true))
+                           if('$Env:Delete_CoreResources' -eq $true)
                            {
                                //$value =  "${WORKSPACE} -core"
                                println  "hi"
@@ -45,7 +45,7 @@ pipeline {
                            }else{
                                 println  "nothing to delete" 
                            }
-                           if($Env:Delete_IngressResources -eq ($true))
+                           if('$Env:Delete_IngressResources' -eq $true)
                            {
                                println  "hello" 
                            }else{
