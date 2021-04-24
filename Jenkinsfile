@@ -35,6 +35,10 @@ pipeline {
                        println "${WORKSPACE}"
                        println "${RG}"
                        
+                       script{
+                           if("${RG}" == "CoreResources")
+                       }
+                       
                         
                       //sh'az deployment group create e --resource-group "Testgroup" --template-file  "${workspace}/Storage.json" --parameters  "${workspace}/Storage.Parameters.json"'
   
