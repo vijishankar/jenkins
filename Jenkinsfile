@@ -37,6 +37,9 @@ pipeline {
                        
                        script{
                            if("${RG}" == "CoreResources")
+                           {
+                               println "CoreResources"
+                           }
                        }
                        
                         
