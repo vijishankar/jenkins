@@ -2,7 +2,12 @@ pipeline {
     agent any
     parameters {
         
-         string(name: 'RGName', defaultValue: '', description: 'Azure RG Name')
+        string(name: 'PROJECT', defaultValue: '', description: 'Project Name')
+        choice(name: 'ENVIRONMENT', choices: ['Dev', 'Test', 'stage', 'Uat', 'Sit', 'Prod'], description: 'Environment')
+        choice(name: 'LOCATION', choices: ['westeurope', 'northeurope', 'eastus', 'Australia East', 'Australia Southeast'], description: 'Location')
+        
+        
+         //string(name: 'RGName', defaultValue: '', description: 'Azure RG Name')
     }
     
     environment {
