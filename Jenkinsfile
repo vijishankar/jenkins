@@ -22,6 +22,7 @@ pipeline {
         AZURE_TENANT_ID='819948b9-e473-435d-b429-6f100444732f'
          WORKSPACE = "$environment-$PROJECT"
         RG = "$RG"
+        CORE = "-core"
         
     }
 
@@ -40,7 +41,7 @@ pipeline {
                            {
                                //$value =  "${WORKSPACE} -core"
                                //println  "${value}"
-                              sh 'az group delete --name $WORKSPACE -core --yes'
+                              sh 'az group delete --name $WORKSPACE-$CORE --yes'
                            }
                        }
                        
