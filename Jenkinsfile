@@ -33,11 +33,11 @@ pipeline {
                             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
                        
                   
-                       println "${WORKSPACE}"
-                       println "${RG}"
+                       //println "${WORKSPACE}"
+                      // println "${RG}"
                        
                        script{
-                           if("$Delete_CoreResources" == "true")
+                           if('$Delete_CoreResources' == "true")
                            {
                                //$value =  "${WORKSPACE} -core"
                                println  "${value}"
