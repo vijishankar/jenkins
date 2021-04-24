@@ -33,10 +33,11 @@ pipeline {
                        
                   
                        println "${WORKSPACE}"
-                       
+                       script{
                        if ("${RG}" -eq ('Delete_CoreResources'))
                        {
                            println "Delete_CoreResources"
+                       }
                        }
                         
                       //sh'az deployment group create e --resource-group "Testgroup" --template-file  "${workspace}/Storage.json" --parameters  "${workspace}/Storage.Parameters.json"'
