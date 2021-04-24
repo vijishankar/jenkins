@@ -40,7 +40,7 @@ pipeline {
                            {
                                //$value =  "${WORKSPACE} -core"
                                //println  "${value}"
-                              sh 'az group delete --name $WORKSPACE -core" --yes'
+                              sh 'az group delete --name $WORKSPACE -core --yes'
                            }
                        }
                        
