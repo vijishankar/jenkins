@@ -42,13 +42,17 @@ pipeline {
                                //$value =  "${WORKSPACE} -core"
                                println  "hi"
                               //sh 'az group delete --name $WORKSPACE-$CORE --yes'
-                           }else{
+                           }
+                           else
+                           {
                                 println  "nothing to delete" 
                            }
                            If($Env:Delete_IngressResources == "true")
                            {
                                println  "hello" 
-                           }else{
+                           }
+                           else
+                           {
                                println  "nothing to delete"
                            }
                        }
