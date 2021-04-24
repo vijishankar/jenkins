@@ -40,7 +40,7 @@ pipeline {
                            if('$Delete_CoreResources' == "true")
                            {
                                //$value =  "${WORKSPACE} -core"
-                               println  "${value}"
+                               println  "hi"
                               //sh 'az group delete --name $WORKSPACE-$CORE --yes'
                            }
                        }
