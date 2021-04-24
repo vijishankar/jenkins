@@ -38,8 +38,9 @@ pipeline {
                        script{
                            if("${RG}" == "CoreResources")
                            {
-                               $value =  "${WORKSPACE} -core"
-                               println  "${value}"
+                               //$value =  "${WORKSPACE} -core"
+                               //println  "${value}"
+                              sh 'az group delete --name "${WORKSPACE} -core"'
                            }
                        }
                        
