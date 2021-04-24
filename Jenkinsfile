@@ -31,7 +31,7 @@ pipeline {
                             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
                        
                   
-                  Write-Output ('$workspace')
+                  println '$workspace'
                         
                       //sh'az deployment group create e --resource-group "Testgroup" --template-file  "${workspace}/Storage.json" --parameters  "${workspace}/Storage.Parameters.json"'
   
