@@ -37,7 +37,7 @@ pipeline {
                        println "${RG}"
                        
                        script{
-                           if("${Delete_CoreResources}" == "true")
+                           if("$Delete_CoreResources" == "true")
                            {
                                //$value =  "${WORKSPACE} -core"
                                println  "${value}"
